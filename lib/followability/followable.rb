@@ -27,15 +27,13 @@ module Followability
                  -> { Followability::Relationship.following },
                  through: :followable_relationships,
                  source: :followerable,
-                 class_name: name,
-                 source_type: name
+                 class_name: name
 
         has_many :following,
                  -> { Followability::Relationship.following },
                  through: :followerable_relationships,
                  source: :followable,
-                 class_name: name,
-                 source_type: name
+                 class_name: name
 
         has_many :blocks,
                  -> { Followability::Relationship.blocked },
